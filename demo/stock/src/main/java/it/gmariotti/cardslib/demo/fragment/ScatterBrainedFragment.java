@@ -5,10 +5,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ScrollView;
+import android.widget.Toast;
 
 import it.gmariotti.cardslib.demo.R;
 import it.gmariotti.cardslib.demo.cards.GoogleNowBirthCard;
 import it.gmariotti.cardslib.demo.cards.ScatterBrainedCard;
+import it.gmariotti.cardslib.library.internal.Card;
 import it.gmariotti.cardslib.library.view.CardView;
 
 /**
@@ -56,6 +58,15 @@ public class ScatterBrainedFragment extends BaseFragment {
         //Create a Card
         sbCard = new ScatterBrainedCard(getActivity());
         sbCard.setId("myId");
+
+        //Set onClick listener
+        sbCard.setOnClickListener(new Card.OnCardClickListener() {
+            @Override
+            public void onClick(Card card, View view) {
+                Toast.makeText(getActivity(), "Clickable card", Toast.LENGTH_LONG).show();
+            }
+        });
+
 
         //Set card in the cardView
         cardView = (CardView) getActivity().findViewById(R.id.scatterbrained_card1);
