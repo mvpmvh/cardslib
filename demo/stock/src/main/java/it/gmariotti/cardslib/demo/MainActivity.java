@@ -61,6 +61,7 @@ import it.gmariotti.cardslib.demo.fragment.ListGplayCardFragment;
 import it.gmariotti.cardslib.demo.fragment.ListGplayUndoCardFragment;
 import it.gmariotti.cardslib.demo.fragment.MiscCardFragment;
 import it.gmariotti.cardslib.demo.fragment.OverflowAnimFragment;
+import it.gmariotti.cardslib.demo.fragment.ScatterBrainedFragment;
 import it.gmariotti.cardslib.demo.fragment.ShadowFragment;
 import it.gmariotti.cardslib.demo.fragment.StockCardFragment;
 import it.gmariotti.cardslib.demo.fragment.ThumbnailFragment;
@@ -111,6 +112,7 @@ public class MainActivity extends Activity {
     private static final int CASE_GRID_GPLAY_CAB = 21;
     private static final int CASE_DISMISS_ANIM = 22;
     private static final int CASE_OVERFLOW_ANIM = 23;
+    private static final int CASE_SCATTERBRAINED = 24;
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
@@ -358,6 +360,9 @@ public class MainActivity extends Activity {
             case CASE_OVERFLOW_ANIM:
                 baseFragment = new OverflowAnimFragment();
                 break;
+            case CASE_SCATTERBRAINED:
+                baseFragment = new ScatterBrainedFragment();
+                break;
             default:
                 break;
         }
@@ -419,7 +424,8 @@ public class MainActivity extends Activity {
             "List with MultiChoice",
             "Grid with MultiChoice",
             "Dismiss Animation (exp)",
-            "Overflow Animation (exp)"
+            "Overflow Animation (exp)",
+            "ScatterBrained"
     };
 
 

@@ -38,9 +38,11 @@ import java.util.HashMap;
 import it.gmariotti.cardslib.library.R;
 import it.gmariotti.cardslib.library.internal.Card;
 import it.gmariotti.cardslib.library.internal.CardExpand;
+import it.gmariotti.cardslib.library.internal.CardFooter;
 import it.gmariotti.cardslib.library.internal.CardHeader;
 import it.gmariotti.cardslib.library.internal.CardThumbnail;
 import it.gmariotti.cardslib.library.internal.ViewToClickToExpand;
+import it.gmariotti.cardslib.library.view.component.CardFooterView;
 import it.gmariotti.cardslib.library.view.component.CardHeaderView;
 import it.gmariotti.cardslib.library.view.component.CardThumbnailView;
 import it.gmariotti.cardslib.library.view.listener.SwipeDismissViewTouchListener;
@@ -108,6 +110,8 @@ public class CardView extends BaseCardView {
      * {@link CardHeader} model
      */
     protected CardHeader mCardHeader;
+
+    protected CardFooter mCardFooter;
 
     /**
      * {@link CardThumbnail} model
@@ -217,6 +221,7 @@ public class CardView extends BaseCardView {
         super.setCard(card);
         if (card!=null){
             mCardHeader=card.getCardHeader();
+            mCardFooter = card.getCardFooter();
             mCardThumbnail=card.getCardThumbnail();
             mCardExpand=card.getCardExpand();
         }
@@ -266,6 +271,8 @@ public class CardView extends BaseCardView {
         //Setup Header view
         setupHeaderView();
 
+        setupFooterView();
+
         //Setup Main View
         setupMainView();
 
@@ -299,6 +306,8 @@ public class CardView extends BaseCardView {
 
         //Get HeaderLayout
         mInternalHeaderLayout = (CardHeaderView) findViewById(R.id.card_header_layout);
+
+        mInternalFooterLayout = (CardFooterView) findViewById(R.id.card_footer_layout);
 
         //Get ExpandHiddenView
         mInternalExpandLayout = (View) findViewById(R.id.card_content_expand_layout);
@@ -335,6 +344,33 @@ public class CardView extends BaseCardView {
 
                 if (isForceReplaceInnerLayout()){
                     mInternalHeaderLayout.addCardHeader(null);
+                    //mInternalHeaderLayout.removeAllViews();
+                }
+            }
+        }
+    }
+
+    protected void setupFooterView() {
+        if (mCardFooter!=null) {
+
+            if (mInternalFooterLayout != null){
+                mInternalFooterLayout.setVisibility(VISIBLE);
+
+                //Set recycle value (very important in a ListView)
+                mInternalFooterLayout.setRecycle(isRecycle());
+                mInternalFooterLayout.setForceReplaceInnerLayout(isForceReplaceInnerLayout());
+                //Add Header View
+                mInternalFooterLayout.addCardFooter(mCardFooter);
+
+            }
+        }else{
+            //No header. Hide layouts
+            if (mInternalFooterLayout != null){
+                mInternalFooterLayout.setVisibility(GONE);
+                //mInternalExpandLayout.setVisibility(View.GONE);
+
+                if (isForceReplaceInnerLayout()){
+                    mInternalFooterLayout.addCardFooter(null);
                     //mInternalHeaderLayout.removeAllViews();
                 }
             }

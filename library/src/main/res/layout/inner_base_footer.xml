@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- This is the InnerContent of the footer -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content">
+
+
+    <!-- This is the base Inner View inside a CardFooter.
+         You can customize it with your layout xml file and your CardFooter.
+         You can populate your elements with CardFooter#setupInnerViewElements(android.view.ViewGroup, android.view.View) method -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/card_footer_inner_simple_title"
+        style="@style/card.footer_simple_title"/>
+
+</LinearLayout>

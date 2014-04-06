@@ -28,6 +28,8 @@
         <!-- Layout to build a Header. Default value is @layout/base_header_layout -->
         <attr name="card_header_layout_resourceID" format="reference"/>
 
+        <attr name="card_footer_layout_resourceID" format="reference"/>
+
         <!-- Layout to build a Thumbnail. Default value is @layout/base_thumbnail_layout -->
         <attr name="card_thumbnail_layout_resourceID" format="reference"/>
 

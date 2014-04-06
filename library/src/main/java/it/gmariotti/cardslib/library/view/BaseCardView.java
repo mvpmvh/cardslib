@@ -29,6 +29,7 @@ import android.widget.LinearLayout;
 import it.gmariotti.cardslib.library.R;
 import it.gmariotti.cardslib.library.internal.Card;
 import it.gmariotti.cardslib.library.view.base.CardViewInterface;
+import it.gmariotti.cardslib.library.view.component.CardFooterView;
 import it.gmariotti.cardslib.library.view.component.CardHeaderView;
 import it.gmariotti.cardslib.library.view.component.CardShadowView;
 import it.gmariotti.cardslib.library.view.component.CardThumbnailView;
@@ -71,7 +72,7 @@ public class BaseCardView extends LinearLayout implements CardViewInterface {
      */
     protected CardHeaderView mInternalHeaderLayout;
 
-
+    protected CardFooterView mInternalFooterLayout;
     /**
      * Thumbnail Compound View
      */
@@ -253,6 +254,8 @@ public class BaseCardView extends LinearLayout implements CardViewInterface {
     public CardThumbnailView getInternalThumbnailLayout() {
         return mInternalThumbnailLayout;
     }
+
+    public CardFooterView getInternalFooterLayour() { return mInternalFooterLayout; }
 
     /**
      * Indicates if view can recycle ui elements.

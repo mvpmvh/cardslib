@@ -87,6 +87,8 @@ public class Card extends BaseCard {
      */
     protected CardHeader mCardHeader;
 
+    protected CardFooter mCardFooter;
+
     /**
      * {@link CardThumbnail}
      */
@@ -347,6 +349,14 @@ public class Card extends BaseCard {
     public CardExpand getCardExpand() {
         return mCardExpand;
     }
+
+    public void addCardFooter(CardFooter cardFooter) {
+        mCardFooter = cardFooter;
+        if (mCardFooter != null)
+            mCardFooter.setParentCard(this);
+    }
+
+    public CardFooter getCardFooter() { return mCardFooter; }
 
     // -------------------------------------------------------------
     // On Swipe Interface and Listener

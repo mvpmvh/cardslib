@@ -100,6 +100,30 @@
 
     </style>
 
+    <!-- Style for Footer *********************************************************-->
+    <style name="card.footer_outer_layout">
+        <item name="android:layout_marginTop">@dimen/card_footer_outer_view_margin_top</item>
+        <item name="android:layout_marginBottom">@dimen/card_footer_outer_view_margin_bottom</item>
+        <item name="android:layout_marginLeft">@dimen/card_footer_outer_view_margin_left</item>
+        <item name="android:layout_marginRight">@dimen/card_footer_outer_view_margin_right</item>
+    </style>
+
+    <!--Style for Header Compound View -->
+    <style name="card.footer_compound_view">
+
+    </style>
+
+    <!--Style for simple title inner header view-->
+    <style name="card.footer_simple_title">
+        <item name="android:textSize">@dimen/card_footer_simple_title_text_size</item>
+        <item name="android:textColor">@color/card_text_color_footer</item>
+        <item name="android:layout_gravity">left|center_vertical</item>
+        <item name="android:layout_marginLeft">@dimen/card_footer_simple_title_margin_left</item>
+        <item name="android:layout_marginTop">@dimen/card_footer_simple_title_margin_top</item>
+        <item name="android:layout_marginRight">@dimen/card_footer_simple_title_margin_right</item>
+        <item name="android:layout_marginBottom">@dimen/card_footer_simple_title_margin_bottom</item>
+    </style>
+
 
     <!-- Style for Content ******************************************************-->
 
