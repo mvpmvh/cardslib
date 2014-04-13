@@ -18,47 +18,64 @@
   ~  *****************************************************************************
   -->
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:card="http://schemas.android.com/apk/res-auto"
-              android:orientation="horizontal"
-              style="@style/card"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:card="http://schemas.android.com/apk/res-auto"
+      style="@style/card"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
 
     <!-- This is the base Inner View inside a CardHeader.
          You can customize it with your layout xml file and your CardHeader.
          You can popolate your element with CardHeader#setupInnerViewElements() method -->
 
     <ImageView
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/scatterbrained_header_image"
+        android:scaleType="centerCrop"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        style="@style/card_thumbnail_image"/>
+
+    <TextView
+        android:id="@+id/game_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/scatterbrained_header_image"
+        android:textSize="24sp"
+        android:layout_marginLeft="6dp"
+        android:textColor="@color/demo_card_header_birth_color"/>
+
+    <TextView
+        android:id="@+id/game_creator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/scatterbrained_header_image"
+        android:layout_below="@+id/game_title"
+        android:textColor="@color/demo_card_header_birth_color"
+        android:layout_marginLeft="6dp"
+        android:textSize="14sp"/>
+
+    <ImageView
+        android:id="@+id/scatterbrained_letter"
         android:scaleType="centerCrop"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:layout_toLeftOf="@+id/scatterbrained_round"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
         style="@style/card_thumbnail_image"/>
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:card="http://schemas.android.com/apk/res-auto"
-        android:orientation="vertical"
-        style="@style/card"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/scatterbrained_round"
+        android:scaleType="centerCrop"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        style="@style/card_thumbnail_image"/>
 
-            <TextView
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:id="@+id/game_title"
-              android:textSize="24sp"
-              android:layout_marginLeft="6dp"
-              android:textColor="@color/demo_card_header_birth_color"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/demo_card_header_birth_color"
-                android:layout_marginLeft="6dp"
-                android:id="@+id/game_creator"
-                android:textSize="14sp"
-                />
-    </LinearLayout>
-</LinearLayout>
+</RelativeLayout>

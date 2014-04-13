@@ -30,8 +30,7 @@
         style="@style/card.main_layout"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent">
 
         <!-- Compound view for Header Card
              If you want to customize this element use attr card:card_header_layout_resourceID

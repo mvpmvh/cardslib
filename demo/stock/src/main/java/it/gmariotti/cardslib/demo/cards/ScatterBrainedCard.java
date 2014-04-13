@@ -41,6 +41,8 @@ public class ScatterBrainedCard extends Card {
     private class ScatterBrainedHeader extends CardHeader {
         String gameTitle;
         String gameCreator;
+        ImageView letter;
+        ImageView round;
 
         public ScatterBrainedHeader(Context context, int innerLayout) {
             super(context, innerLayout);
@@ -52,10 +54,14 @@ public class ScatterBrainedCard extends Card {
             TextView title = (TextView) view.findViewById(R.id.game_title);
             TextView creator = (TextView) view.findViewById(R.id.game_creator);
             ImageView imageView = (ImageView) view.findViewById(R.id.scatterbrained_header_image);
+            ImageView letter = (ImageView) view.findViewById(R.id.scatterbrained_letter);
+            ImageView round = (ImageView) view.findViewById(R.id.scatterbrained_round);
 
             title.setText(gameTitle);
             creator.setText(gameCreator);
             imageView.setImageResource(R.drawable.ic_ic_error_loading);
+            letter.setImageResource(R.drawable.ic_ic_error_loading);
+            round.setImageResource(R.drawable.ic_ic_error_loading);
         }
     }
 
